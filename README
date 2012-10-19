@@ -6,13 +6,19 @@ package builtin
     Package builtin supplies types with methods covering Go's builtin
     operators.
 
+FUNCTIONS
+
+func Augment(i interface{}) interface{}
+    Convert a builtin type to its autmented type.
+
+
 TYPES
 
 type Float32 float32
 
 func (a Float32) Add(b interface{}) interface{}
 
-func (a Float32) Compare(b interface{}) interface{}
+func (a Float32) Compare(b interface{}) int
 
 func (a Float32) Div(b interface{}) interface{}
 
@@ -40,7 +46,7 @@ type Float64 float64
 
 func (a Float64) Add(b interface{}) interface{}
 
-func (a Float64) Compare(b interface{}) interface{}
+func (a Float64) Compare(b interface{}) int
 
 func (a Float64) Div(b interface{}) interface{}
 
@@ -72,7 +78,7 @@ func (a Int) And(b interface{}) interface{}
 
 func (a Int) AndNot(b interface{}) interface{}
 
-func (a Int) Compare(b interface{}) interface{}
+func (a Int) Compare(b interface{}) int
 
 func (a Int) Div(b interface{}) interface{}
 
@@ -114,7 +120,7 @@ func (a Int16) And(b interface{}) interface{}
 
 func (a Int16) AndNot(b interface{}) interface{}
 
-func (a Int16) Compare(b interface{}) interface{}
+func (a Int16) Compare(b interface{}) int
 
 func (a Int16) Div(b interface{}) interface{}
 
@@ -156,7 +162,7 @@ func (a Int32) And(b interface{}) interface{}
 
 func (a Int32) AndNot(b interface{}) interface{}
 
-func (a Int32) Compare(b interface{}) interface{}
+func (a Int32) Compare(b interface{}) int
 
 func (a Int32) Div(b interface{}) interface{}
 
@@ -198,7 +204,7 @@ func (a Int64) And(b interface{}) interface{}
 
 func (a Int64) AndNot(b interface{}) interface{}
 
-func (a Int64) Compare(b interface{}) interface{}
+func (a Int64) Compare(b interface{}) int
 
 func (a Int64) Div(b interface{}) interface{}
 
@@ -240,7 +246,7 @@ func (a Int8) And(b interface{}) interface{}
 
 func (a Int8) AndNot(b interface{}) interface{}
 
-func (a Int8) Compare(b interface{}) interface{}
+func (a Int8) Compare(b interface{}) int
 
 func (a Int8) Div(b interface{}) interface{}
 
@@ -276,7 +282,7 @@ func (a Int8) Xor(b interface{}) interface{}
 
 type String string
 
-func (a String) Compare(b interface{}) interface{}
+func (a String) Compare(b interface{}) int
 
 func (a String) Eq(b interface{}) bool
 
@@ -302,7 +308,7 @@ func (a Uint) And(b interface{}) interface{}
 
 func (a Uint) AndNot(b interface{}) interface{}
 
-func (a Uint) Compare(b interface{}) interface{}
+func (a Uint) Compare(b interface{}) int
 
 func (a Uint) Div(b interface{}) interface{}
 
@@ -344,7 +350,7 @@ func (a Uint16) And(b interface{}) interface{}
 
 func (a Uint16) AndNot(b interface{}) interface{}
 
-func (a Uint16) Compare(b interface{}) interface{}
+func (a Uint16) Compare(b interface{}) int
 
 func (a Uint16) Div(b interface{}) interface{}
 
@@ -386,7 +392,7 @@ func (a Uint32) And(b interface{}) interface{}
 
 func (a Uint32) AndNot(b interface{}) interface{}
 
-func (a Uint32) Compare(b interface{}) interface{}
+func (a Uint32) Compare(b interface{}) int
 
 func (a Uint32) Div(b interface{}) interface{}
 
@@ -428,7 +434,7 @@ func (a Uint64) And(b interface{}) interface{}
 
 func (a Uint64) AndNot(b interface{}) interface{}
 
-func (a Uint64) Compare(b interface{}) interface{}
+func (a Uint64) Compare(b interface{}) int
 
 func (a Uint64) Div(b interface{}) interface{}
 
@@ -470,7 +476,7 @@ func (a Uint8) And(b interface{}) interface{}
 
 func (a Uint8) AndNot(b interface{}) interface{}
 
-func (a Uint8) Compare(b interface{}) interface{}
+func (a Uint8) Compare(b interface{}) int
 
 func (a Uint8) Div(b interface{}) interface{}
 
