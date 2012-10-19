@@ -10,7 +10,7 @@ func (a Int) Less(b interface{}) bool      { return a < b.(Int) }
 func (a Int) LessEq(b interface{}) bool    { return a <= b.(Int) }
 func (a Int) Greater(b interface{}) bool   { return a > b.(Int) }
 func (a Int) GreaterEq(b interface{}) bool { return a >= b.(Int) }
-func (a Int) Compare(b interface{}) interface{} {
+func (a Int) Compare(b interface{}) int {
 	c := b.(Int)
 	if a <= c {
 		if a < c {
@@ -54,7 +54,7 @@ func (a Int8) Less(b interface{}) bool      { return a < b.(Int8) }
 func (a Int8) LessEq(b interface{}) bool    { return a <= b.(Int8) }
 func (a Int8) Greater(b interface{}) bool   { return a > b.(Int8) }
 func (a Int8) GreaterEq(b interface{}) bool { return a >= b.(Int8) }
-func (a Int8) Compare(b interface{}) interface{} {
+func (a Int8) Compare(b interface{}) int {
 	c := b.(Int8)
 	if a <= c {
 		if a < c {
@@ -98,7 +98,7 @@ func (a Int16) Less(b interface{}) bool      { return a < b.(Int16) }
 func (a Int16) LessEq(b interface{}) bool    { return a <= b.(Int16) }
 func (a Int16) Greater(b interface{}) bool   { return a > b.(Int16) }
 func (a Int16) GreaterEq(b interface{}) bool { return a >= b.(Int16) }
-func (a Int16) Compare(b interface{}) interface{} {
+func (a Int16) Compare(b interface{}) int {
 	c := b.(Int16)
 	if a <= c {
 		if a < c {
@@ -142,7 +142,7 @@ func (a Int32) Less(b interface{}) bool      { return a < b.(Int32) }
 func (a Int32) LessEq(b interface{}) bool    { return a <= b.(Int32) }
 func (a Int32) Greater(b interface{}) bool   { return a > b.(Int32) }
 func (a Int32) GreaterEq(b interface{}) bool { return a >= b.(Int32) }
-func (a Int32) Compare(b interface{}) interface{} {
+func (a Int32) Compare(b interface{}) int {
 	c := b.(Int32)
 	if a <= c {
 		if a < c {
@@ -186,7 +186,7 @@ func (a Int64) Less(b interface{}) bool      { return a < b.(Int64) }
 func (a Int64) LessEq(b interface{}) bool    { return a <= b.(Int64) }
 func (a Int64) Greater(b interface{}) bool   { return a > b.(Int64) }
 func (a Int64) GreaterEq(b interface{}) bool { return a >= b.(Int64) }
-func (a Int64) Compare(b interface{}) interface{} {
+func (a Int64) Compare(b interface{}) int {
 	c := b.(Int64)
 	if a <= c {
 		if a < c {
@@ -230,7 +230,7 @@ func (a Uint) Less(b interface{}) bool      { return a < b.(Uint) }
 func (a Uint) LessEq(b interface{}) bool    { return a <= b.(Uint) }
 func (a Uint) Greater(b interface{}) bool   { return a > b.(Uint) }
 func (a Uint) GreaterEq(b interface{}) bool { return a >= b.(Uint) }
-func (a Uint) Compare(b interface{}) interface{} {
+func (a Uint) Compare(b interface{}) int {
 	c := b.(Uint)
 	if a <= c {
 		if a < c {
@@ -274,7 +274,7 @@ func (a Uint8) Less(b interface{}) bool      { return a < b.(Uint8) }
 func (a Uint8) LessEq(b interface{}) bool    { return a <= b.(Uint8) }
 func (a Uint8) Greater(b interface{}) bool   { return a > b.(Uint8) }
 func (a Uint8) GreaterEq(b interface{}) bool { return a >= b.(Uint8) }
-func (a Uint8) Compare(b interface{}) interface{} {
+func (a Uint8) Compare(b interface{}) int {
 	c := b.(Uint8)
 	if a <= c {
 		if a < c {
@@ -318,7 +318,7 @@ func (a Uint16) Less(b interface{}) bool      { return a < b.(Uint16) }
 func (a Uint16) LessEq(b interface{}) bool    { return a <= b.(Uint16) }
 func (a Uint16) Greater(b interface{}) bool   { return a > b.(Uint16) }
 func (a Uint16) GreaterEq(b interface{}) bool { return a >= b.(Uint16) }
-func (a Uint16) Compare(b interface{}) interface{} {
+func (a Uint16) Compare(b interface{}) int {
 	c := b.(Uint16)
 	if a <= c {
 		if a < c {
@@ -362,7 +362,7 @@ func (a Uint32) Less(b interface{}) bool      { return a < b.(Uint32) }
 func (a Uint32) LessEq(b interface{}) bool    { return a <= b.(Uint32) }
 func (a Uint32) Greater(b interface{}) bool   { return a > b.(Uint32) }
 func (a Uint32) GreaterEq(b interface{}) bool { return a >= b.(Uint32) }
-func (a Uint32) Compare(b interface{}) interface{} {
+func (a Uint32) Compare(b interface{}) int {
 	c := b.(Uint32)
 	if a <= c {
 		if a < c {
@@ -406,7 +406,7 @@ func (a Uint64) Less(b interface{}) bool      { return a < b.(Uint64) }
 func (a Uint64) LessEq(b interface{}) bool    { return a <= b.(Uint64) }
 func (a Uint64) Greater(b interface{}) bool   { return a > b.(Uint64) }
 func (a Uint64) GreaterEq(b interface{}) bool { return a >= b.(Uint64) }
-func (a Uint64) Compare(b interface{}) interface{} {
+func (a Uint64) Compare(b interface{}) int {
 	c := b.(Uint64)
 	if a <= c {
 		if a < c {
@@ -450,7 +450,7 @@ func (a Float64) Less(b interface{}) bool      { return a < b.(Float64) }
 func (a Float64) LessEq(b interface{}) bool    { return a <= b.(Float64) }
 func (a Float64) Greater(b interface{}) bool   { return a > b.(Float64) }
 func (a Float64) GreaterEq(b interface{}) bool { return a >= b.(Float64) }
-func (a Float64) Compare(b interface{}) interface{} {
+func (a Float64) Compare(b interface{}) int {
 	c := b.(Float64)
 	if a <= c {
 		if a < c {
@@ -487,7 +487,7 @@ func (a Float32) Less(b interface{}) bool      { return a < b.(Float32) }
 func (a Float32) LessEq(b interface{}) bool    { return a <= b.(Float32) }
 func (a Float32) Greater(b interface{}) bool   { return a > b.(Float32) }
 func (a Float32) GreaterEq(b interface{}) bool { return a >= b.(Float32) }
-func (a Float32) Compare(b interface{}) interface{} {
+func (a Float32) Compare(b interface{}) int {
 	c := b.(Float32)
 	if a <= c {
 		if a < c {
@@ -524,7 +524,7 @@ func (a String) Less(b interface{}) bool      { return a < b.(String) }
 func (a String) LessEq(b interface{}) bool    { return a <= b.(String) }
 func (a String) Greater(b interface{}) bool   { return a > b.(String) }
 func (a String) GreaterEq(b interface{}) bool { return a >= b.(String) }
-func (a String) Compare(b interface{}) interface{} {
+func (a String) Compare(b interface{}) int {
 	c := b.(String)
 	if a <= c {
 		if a < c {

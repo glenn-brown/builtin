@@ -42,7 +42,7 @@ func (a @) Less(b interface{}) bool		{ return a < b.(@) }
 func (a @) LessEq(b interface{}) bool		{ return a <= b.(@) }
 func (a @) Greater(b interface{}) bool		{ return a > b.(@) }
 func (a @) GreaterEq(b interface{}) bool	{ return a >= b.(@) }
-func (a @) Compare(b interface{}) interface{}	{ c:=b.(@); if a <= c { if a < c { return -1 } ; return 0 } ; return 1 }
+func (a @) Compare(b interface{}) int		{ c:=b.(@); if a <= c { if a < c { return -1 } ; return 0 } ; return 1 }
 func (a @) Max(b interface{}) interface{}	{ c:=b.(@); if c < a { c = a }; return c }
 func (a @) Min(b interface{}) interface{}	{ c:=b.(@); if c > a { c = a }; return c }
 EOF
