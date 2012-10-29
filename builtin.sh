@@ -92,6 +92,7 @@ EOF
     type Uint16 uint16		Numerical Bits
     type Uint32 uint32		Numerical Bits
     type Uint64 uint64		Numerical Bits
+    type Uintptr uintptr	Numerical Bits
     type Float64 float64	Numerical
     type Float32 float32	Numerical
     type String string		Ordinal

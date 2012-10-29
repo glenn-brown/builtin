@@ -442,6 +442,50 @@ func (a Uint64) AndNot(b interface{}) interface{}     { return a &^ b.(Uint64) }
 func (a Uint64) ShiftLeft(b interface{}) interface{}  { return a << b.(uint) }
 func (a Uint64) ShiftRight(b interface{}) interface{} { return a >> b.(uint) }
 
+type Uintptr uintptr
+
+func (a Uintptr) Eq(b interface{}) bool        { return a == b.(Uintptr) }
+func (a Uintptr) NotEq(b interface{}) bool     { return a != b.(Uintptr) }
+func (a Uintptr) Less(b interface{}) bool      { return a < b.(Uintptr) }
+func (a Uintptr) LessEq(b interface{}) bool    { return a <= b.(Uintptr) }
+func (a Uintptr) Greater(b interface{}) bool   { return a > b.(Uintptr) }
+func (a Uintptr) GreaterEq(b interface{}) bool { return a >= b.(Uintptr) }
+func (a Uintptr) Compare(b interface{}) int {
+	c := b.(Uintptr)
+	if a <= c {
+		if a < c {
+			return -1
+		}
+		return 0
+	}
+	return 1
+}
+func (a Uintptr) Max(b interface{}) interface{} {
+	c := b.(Uintptr)
+	if c < a {
+		c = a
+	}
+	return c
+}
+func (a Uintptr) Min(b interface{}) interface{} {
+	c := b.(Uintptr)
+	if c > a {
+		c = a
+	}
+	return c
+}
+func (a Uintptr) Add(b interface{}) interface{}        { return a + b.(Uintptr) }
+func (a Uintptr) Sub(b interface{}) interface{}        { return a - b.(Uintptr) }
+func (a Uintptr) Mul(b interface{}) interface{}        { return a * b.(Uintptr) }
+func (a Uintptr) Div(b interface{}) interface{}        { return a / b.(Uintptr) }
+func (a Uintptr) And(b interface{}) interface{}        { return a & b.(Uintptr) }
+func (a Uintptr) Or(b interface{}) interface{}         { return a | b.(Uintptr) }
+func (a Uintptr) Xor(b interface{}) interface{}        { return a ^ b.(Uintptr) }
+func (a Uintptr) Not() interface{}                     { return ^a }
+func (a Uintptr) AndNot(b interface{}) interface{}     { return a &^ b.(Uintptr) }
+func (a Uintptr) ShiftLeft(b interface{}) interface{}  { return a << b.(uint) }
+func (a Uintptr) ShiftRight(b interface{}) interface{} { return a >> b.(uint) }
+
 type Float64 float64
 
 func (a Float64) Eq(b interface{}) bool        { return a == b.(Float64) }
